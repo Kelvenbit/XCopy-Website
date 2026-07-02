@@ -9,10 +9,10 @@
 - 最新下载按钮固定指向：
 
 ```text
-./assets/XCopy.dmg
+https://raw.githubusercontent.com/Kelvenbit/XCopy-Website/aebdef97fd9e8de8287d3f0dfd8ecf8e408bee67/assets/XCopy.dmg
 ```
 
-- 每次发布前，必须重新生成 `assets/XCopy.dmg`。
+- 每次发布前，必须重新生成 raw GitHub 固定文件 `XCopy.dmg`。
 - DMG 应优先使用 Developer ID 签名并完成 Apple 公证，降低用户首次打开时的安全警告。
 
 ## GitHub Pages 配置
@@ -47,7 +47,7 @@ assets/XCopy.dmg
 ./scripts/package_docs_dmg.sh
 ```
 
-这个脚本会执行 Release 构建，并把最新安装包覆盖写入 `assets/XCopy.dmg`。
+这个脚本会执行 Release 构建，并把最新安装包覆盖写入 raw GitHub 固定文件 `XCopy.dmg`。
 
 ## 正式公证包
 
@@ -68,12 +68,12 @@ assets/XCopy.dmg
 ## 发布 GitHub Pages
 
 1. 使用 `./scripts/package_docs_dmg.sh` 生成最新 DMG。
-2. 确认 `index.html` 下载按钮指向 `./assets/XCopy.dmg`。
-3. 提交并推送 `index.html`、`assets/XCopy.dmg` 和相关文档。
+2. 确认 `index.html` 下载按钮指向 `https://raw.githubusercontent.com/Kelvenbit/XCopy-Website/aebdef97fd9e8de8287d3f0dfd8ecf8e408bee67/assets/XCopy.dmg`。
+3. 提交并推送 `index.html`、raw GitHub 固定文件 `XCopy.dmg` 和相关文档。
 4. GitHub Pages 更新后打开下载链接确认能直接下载：
 
 ```text
-https://kelvenbit.github.io/XCopy-Website/assets/XCopy.dmg
+https://raw.githubusercontent.com/Kelvenbit/XCopy-Website/aebdef97fd9e8de8287d3f0dfd8ecf8e408bee67/assets/XCopy.dmg
 ```
 
 ## 发布前检查
@@ -82,7 +82,7 @@ https://kelvenbit.github.io/XCopy-Website/assets/XCopy.dmg
 - DMG 可以挂载。
 - DMG 内包含 `XCopy.app` 和 `Applications` 快捷方式。
 - 正式分发版本已签名、公证并 staple。
-- `assets/XCopy.dmg` 已更新。
+- raw GitHub 固定文件 `XCopy.dmg` 已更新。
 - GitHub Pages 首页下载按钮可直接下载最新版本。
 - 隐私政策页面可访问。
 

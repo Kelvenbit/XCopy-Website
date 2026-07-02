@@ -194,10 +194,10 @@ XCopy 当前采用免费完整功能分发：GitHub Pages 承载下载网站，G
 网站下载按钮会固定访问：
 
 ```text
-https://kelvenbit.github.io/XCopy-Website/assets/XCopy.dmg
+https://raw.githubusercontent.com/Kelvenbit/XCopy-Website/aebdef97fd9e8de8287d3f0dfd8ecf8e408bee67/assets/XCopy.dmg
 ```
 
-对应仓库文件为 `assets/XCopy.dmg`。
+对应仓库文件为 raw GitHub 固定文件 `XCopy.dmg`。
 
 完整流程见 [DISTRIBUTION.md](DISTRIBUTION.md)。
 
