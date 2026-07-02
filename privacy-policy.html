@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - XCopy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1D1D1F;
+            background-color: #F5F5F7;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header {
+            background: linear-gradient(180deg, #FBFBFD 0%, #F5F5F7 100%);
+            border-bottom: 1px solid #D2D2D7;
+            padding: 48px 20px 36px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #1D1D1F;
+            margin-bottom: 4px;
+        }
+
+        .header .subtitle {
+            font-size: 17px;
+            color: #86868B;
+            font-weight: 400;
+        }
+
+        /* Language Dropdown - Top Right */
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 12px 24px;
+            background: #FBFBFD;
+        }
+
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid #D2D2D7;
+            border-radius: 8px;
+            background: #fff;
+            color: #1D1D1F;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.15s ease;
+        }
+
+        .lang-dropdown-btn:hover {
+            border-color: #007AFF;
+            color: #007AFF;
+        }
+
+        .lang-dropdown-btn .arrow {
+            font-size: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .lang-dropdown-btn.open .arrow {
+            transform: rotate(180deg);
+        }
+
+        .lang-dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: calc(100% + 4px);
+            background: #fff;
+            border: 1px solid #D2D2D7;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            z-index: 100;
+            min-width: 120px;
+        }
+
+        .lang-dropdown-menu.show {
+            display: block;
+        }
+
+        .lang-dropdown-menu button {
+            display: block;
+            width: 100%;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 400;
+            border: none;
+            background: #fff;
+            color: #1D1D1F;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            transition: background 0.15s ease;
+        }
+
+        .lang-dropdown-menu button:hover {
+            background: #F5F5F7;
+        }
+
+        .lang-dropdown-menu button.active {
+            color: #007AFF;
+            font-weight: 500;
+        }
+
+        /* Content */
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        .content-section {
+            margin-bottom: 36px;
+        }
+
+        .content-section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1D1D1F;
+            margin-bottom: 12px;
+            letter-spacing: -0.2px;
+        }
+
+        .content-section p {
+            font-size: 15px;
+            color: #424245;
+            margin-bottom: 10px;
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        .content-section ul li {
+            font-size: 15px;
+            color: #424245;
+            padding: 4px 0 4px 20px;
+            position: relative;
+        }
+
+        .content-section ul li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            color: #007AFF;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 16px 0;
+            border: 1px solid #E5E5EA;
+        }
+
+        .highlight-box strong {
+            color: #1D1D1F;
+        }
+
+        .effective-date {
+            font-size: 13px;
+            color: #86868B;
+            margin-top: 4px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 32px 20px;
+            border-top: 1px solid #D2D2D7;
+            color: #86868B;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hidden language content */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Print styles */
+        @media print {
+            body { background: #fff; }
+            .header { background: none; border: none; padding: 20px 0; }
+            .highlight-box { border: 1px solid #ccc; }
+            .top-bar { display: none; }
+            .lang-dropdown { display: none; }
+            .lang-content { display: block !important; }
+            .lang-content + .lang-content { margin-top: 60px; border-top: 2px solid #000; padding-top: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="lang-dropdown">
+        <button class="lang-dropdown-btn" onclick="toggleDropdown()">
+            <span id="current-lang">English</span>
+            <span class="arrow">▼</span>
+        </button>
+        <div class="lang-dropdown-menu" id="lang-menu">
+            <button class="active" onclick="switchLang('en')">English</button>
+            <button onclick="switchLang('zh')">中文</button>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <h1>XCopy</h1>
+    <div class="subtitle">macOS Clipboard Manager</div>
+</div>
+
+<!-- English Content -->
+<div class="container">
+<div id="content-en" class="lang-content active">
+
+    <div class="content-section">
+        <h2>Privacy Policy</h2>
+        <p><strong>Effective Date:</strong> April 12, 2026</p>
+        <p class="effective-date">Last updated: April 12, 2026</p>
+        <p>This privacy policy applies to the XCopy application ("App") developed by XCopy.Team ("we", "us", "our"). We are committed to protecting your privacy and being transparent about how your data is handled.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>1. Information We Collect</h2>
+        <div class="highlight-box">
+            <p><strong>XCopy does not collect, transmit, or store any personal information on external servers.</strong></p>
+        </div>
+        <p>We do not collect:</p>
+        <ul>
+            <li>Personal identifiers (name, email, phone number)</li>
+            <li>Account information or credentials</li>
+            <li>Location data</li>
+            <li>Usage analytics or behavioral data</li>
+            <li>Device identifiers</li>
+            <li>Any information beyond what is necessary for the App's core functionality</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>2. Clipboard Data</h2>
+        <p>XCopy is a clipboard manager that stores your clipboard history locally on your device using Apple's CoreData framework.</p>
+        <ul>
+            <li>All clipboard data is stored <strong>locally on your Mac</strong></li>
+            <li>Clipboard data never leaves your device unless iCloud Sync is enabled</li>
+            <li>You have full control over which data types are stored and can delete items at any time</li>
+            <li>Supported content types: text, rich text, images, URLs, colors</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>3. iCloud Sync</h2>
+        <p>XCopy supports iCloud synchronization to share clipboard history across your macOS devices.</p>
+        <ul>
+            <li>Uses Apple CloudKit <strong>private database</strong> only</li>
+            <li>Data is <strong>end-to-end encrypted</strong> by Apple</li>
+            <li><strong>We cannot access your synced data</strong> — only your Apple ID can decrypt it</li>
+            <li>You choose which content types to sync (text, links, images, etc.)</li>
+            <li>File clipboard items are never synced (security bookmarks are device-specific)</li>
+        </ul>
+        <p>For more details on iCloud Sync, refer to your device's iCloud settings and Apple's privacy policy at <a href="https://www.apple.com/legal/privacy/" style="color:#007AFF">apple.com/legal/privacy</a>.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>4. Data Sharing</h2>
+        <div class="highlight-box">
+            <p><strong>We do not share any data with third parties.</strong></p>
+        </div>
+        <ul>
+            <li>No analytics services (Google Analytics, Firebase, etc.)</li>
+            <li>No advertising networks or trackers</li>
+            <li>No crash reporting tools that collect user data</li>
+            <li>No third-party SDKs that collect personal information</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>5. Data Retention & Deletion</h2>
+        <p>You have complete control over your data:</p>
+        <ul>
+            <li>Delete individual clipboard items at any time within the App</li>
+            <li>Clear all clipboard history from the App's settings</li>
+            <li>Uninstalling XCopy removes all locally stored data</li>
+            <li>iCloud-synced data can be managed through your iCloud settings</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>6. Children's Privacy</h2>
+        <p>XCopy is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>7. Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this page periodically.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>8. Contact Us</h2>
+        <p>If you have questions about this privacy policy or XCopy's data practices, please contact us:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:xcopy.support@gmail.com" style="color:#007AFF">xcopy.support@gmail.com</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Chinese Content -->
+<div id="content-zh" class="lang-content">
+
+    <div class="content-section">
+        <h2>隐私政策</h2>
+        <p><strong>生效日期：</strong>2026 年 4 月 12 日</p>
+        <p class="effective-date">最后更新：2026 年 4 月 12 日</p>
+        <p>本隐私政策适用于由 XCopy.Team（以下简称"我们"）开发的 XCopy 应用程序（以下简称"本应用"）。我们致力于保护您的隐私，并对您的数据处理方式保持透明。</p>
+    </div>
+
+    <div class="content-section">
+        <h2>1. 我们收集的信息</h2>
+        <div class="highlight-box">
+            <p><strong>XCopy 不会在任何外部服务器上收集、传输或存储您的个人信息。</strong></p>
+        </div>
+        <p>我们不会收集：</p>
+        <ul>
+            <li>个人身份信息（姓名、邮箱、电话号码）</li>
+            <li>账户信息或凭据</li>
+            <li>位置数据</li>
+            <li>使用分析或行为数据</li>
+            <li>设备标识符</li>
+            <li>任何超出应用核心功能所需范围的信息</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>2. 剪贴板数据</h2>
+        <p>XCopy 是一款剪贴板管理器，使用 Apple 的 CoreData 框架将剪贴板历史记录本地存储在您的设备上。</p>
+        <ul>
+            <li>所有剪贴板数据<strong>仅存储在您的 Mac 本地</strong></li>
+            <li>除非启用了 iCloud 同步，否则剪贴板数据不会离开您的设备</li>
+            <li>您可以完全控制存储哪些数据类型，并随时删除任何条目</li>
+            <li>支持的内容类型：文本、富文本、图片、链接、颜色</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>3. iCloud 同步</h2>
+        <p>XCopy 支持 iCloud 同步功能，可在您的 macOS 设备间共享剪贴板历史。</p>
+        <ul>
+            <li>仅使用 Apple CloudKit <strong>私有数据库</strong></li>
+            <li>数据由 Apple 进行<strong>端到端加密</strong></li>
+            <li><strong>我们无法访问您的同步数据</strong> — 只有您的 Apple ID 才能解密</li>
+            <li>您可以选择要同步的内容类型（文本、链接、图片等）</li>
+            <li>文件类型的剪贴板条目不会同步（安全书签仅限单设备使用）</li>
+        </ul>
+        <p>有关 iCloud 同步的更多详情，请参阅您设备的 iCloud 设置以及 Apple 的隐私政策：<a href="https://www.apple.com/legal/privacy/" style="color:#007AFF">apple.com/legal/privacy</a>。</p>
+    </div>
+
+    <div class="content-section">
+        <h2>4. 数据共享</h2>
+        <div class="highlight-box">
+            <p><strong>我们不会与任何第三方共享您的数据。</strong></p>
+        </div>
+        <ul>
+            <li>不使用任何分析服务（Google Analytics、Firebase 等）</li>
+            <li>不使用广告网络或追踪器</li>
+            <li>不使用收集用户数据的崩溃报告工具</li>
+            <li>不包含收集个人信息的第三方 SDK</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>5. 数据保留与删除</h2>
+        <p>您对数据拥有完全控制权：</p>
+        <ul>
+            <li>可随时在应用内删除单个剪贴板条目</li>
+            <li>可通过应用设置清除所有剪贴板历史</li>
+            <li>卸载 XCopy 将删除所有本地存储的数据</li>
+            <li>iCloud 同步的数据可通过您的 iCloud 设置管理</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>6. 儿童隐私</h2>
+        <p>XCopy 不面向 13 岁以下儿童。我们不会故意收集儿童的个人信息。</p>
+    </div>
+
+    <div class="content-section">
+        <h2>7. 政策变更</h2>
+        <p>我们可能会不时更新本隐私政策。任何变更将在此页面上更新生效日期。我们建议您定期查看此页面。</p>
+    </div>
+
+    <div class="content-section">
+        <h2>8. 联系我们</h2>
+        <p>如果您对本隐私政策或 XCopy 的数据处理方式有任何疑问，请通过以下方式联系我们：</p>
+        <ul>
+            <li><strong>邮箱：</strong><a href="mailto:xcopy.support@gmail.com" style="color:#007AFF">xcopy.support@gmail.com</a></li>
+        </ul>
+    </div>
+
+</div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2026 XCopy.Team. All rights reserved.</p>
+</div>
+
+<script>
+function toggleDropdown() {
+    var menu = document.getElementById('lang-menu');
+    var btn = document.querySelector('.lang-dropdown-btn');
+    menu.classList.toggle('show');
+    btn.classList.toggle('open');
+}
+
+function switchLang(lang) {
+    // Update content
+    document.querySelectorAll('.lang-content').forEach(function(el) {
+        el.classList.remove('active');
+    });
+    document.getElementById('content-' + lang).classList.add('active');
+
+    // Update button text
+    var langNames = { 'en': 'English', 'zh': '中文' };
+    document.getElementById('current-lang').textContent = langNames[lang];
+
+    // Update menu active state
+    document.querySelectorAll('.lang-dropdown-menu button').forEach(function(btn) {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+
+    // Close dropdown
+    document.getElementById('lang-menu').classList.remove('show');
+    document.querySelector('.lang-dropdown-btn').classList.remove('open');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.lang-dropdown')) {
+        document.getElementById('lang-menu').classList.remove('show');
+        document.querySelector('.lang-dropdown-btn').classList.remove('open');
+    }
+});
+</script>
+
+</body>
+</html>
