@@ -236,8 +236,8 @@
             <span class="arrow">▼</span>
         </button>
         <div class="lang-dropdown-menu" id="lang-menu">
-            <button class="active" onclick="switchLang('en')">English</button>
-            <button onclick="switchLang('zh')">中文</button>
+            <button data-lang-option="en" onclick="switchLang('en')">English</button>
+            <button data-lang-option="zh" onclick="switchLang('zh')">中文</button>
         </div>
     </div>
 </div>
@@ -441,6 +441,21 @@
 </div>
 
 <script>
+var LANG_STORAGE_KEY = 'xcopy-lang';
+var langNames = { 'en': 'English', 'zh': '中文' };
+
+function getBrowserLang() {
+    var languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+    return languages.some(function(lang) {
+        return /^zh\b/i.test(lang);
+    }) ? 'zh' : 'en';
+}
+
+function getInitialLang() {
+    var saved = localStorage.getItem(LANG_STORAGE_KEY);
+    return saved === 'zh' || saved === 'en' ? saved : getBrowserLang();
+}
+
 function toggleDropdown() {
     var menu = document.getElementById('lang-menu');
     var btn = document.querySelector('.lang-dropdown-btn');
@@ -456,14 +471,15 @@ function switchLang(lang) {
     document.getElementById('content-' + lang).classList.add('active');
 
     // Update button text
-    var langNames = { 'en': 'English', 'zh': '中文' };
     document.getElementById('current-lang').textContent = langNames[lang];
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.title = lang === 'zh' ? '隐私政策 - XCopy' : 'Privacy Policy - XCopy';
 
     // Update menu active state
     document.querySelectorAll('.lang-dropdown-menu button').forEach(function(btn) {
-        btn.classList.remove('active');
+        btn.classList.toggle('active', btn.getAttribute('data-lang-option') === lang);
     });
-    event.target.classList.add('active');
+    localStorage.setItem(LANG_STORAGE_KEY, lang);
 
     // Close dropdown
     document.getElementById('lang-menu').classList.remove('show');
@@ -477,6 +493,8 @@ document.addEventListener('click', function(e) {
         document.querySelector('.lang-dropdown-btn').classList.remove('open');
     }
 });
+
+switchLang(getInitialLang());
 </script>
 
 </body>
