@@ -32,7 +32,7 @@
         }
 
         .page {
-            width: min(760px, calc(100% - 34px));
+            width: min(1120px, calc(100% - 34px));
             margin: 0 auto;
         }
 
@@ -142,7 +142,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 42px 0 76px;
+            padding: 42px 0 52px;
             text-align: center;
         }
 
@@ -220,29 +220,27 @@
             background: #9aa3ad;
         }
 
-        .proof {
+        .screenshots {
+            padding: 0 0 76px;
+        }
+
+        .screenshot-stack {
             display: grid;
-            gap: 14px;
-            margin-top: 46px;
-            text-align: left;
+            gap: 22px;
         }
 
-        .proof-row {
-            display: grid;
-            grid-template-columns: 120px minmax(0, 1fr);
-            gap: 18px;
-            padding: 18px 0;
-            border-top: 1px solid var(--line);
+        .screenshot-stack[hidden] {
+            display: none;
         }
 
-        .proof-row strong {
-            font-size: 15px;
-        }
-
-        .proof-row p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 15px;
+        .screenshot-stack img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--soft);
+            box-shadow: 0 18px 44px rgba(24, 32, 45, 0.10);
         }
 
         footer {
@@ -279,9 +277,17 @@
                 justify-content: flex-start;
             }
 
-            .proof-row {
-                grid-template-columns: 1fr;
-                gap: 6px;
+            .hero {
+                min-height: auto;
+                padding-top: 28px;
+            }
+
+            .screenshots {
+                padding-bottom: 54px;
+            }
+
+            .screenshot-stack {
+                gap: 16px;
             }
         }
     </style>
@@ -318,26 +324,25 @@
                 <li data-i18n="tagSubscription">No subscription</li>
                 <li data-i18n="tagSystem">macOS 14.0+</li>
             </ul>
-
-            <section id="features" class="proof">
-                <div class="proof-row">
-                    <strong data-i18n="featureOneTitle">Remember everything</strong>
-                    <p data-i18n="featureOneBody">Text, images, links, and files are saved in common formats.</p>
-                </div>
-                <div class="proof-row">
-                    <strong data-i18n="featureTwoTitle">Find it fast</strong>
-                    <p data-i18n="featureTwoBody">Press Command-Shift-V, search by keyword, filter by type, and press Return to reuse.</p>
-                </div>
-                <div class="proof-row">
-                    <strong data-i18n="featureThreeTitle">Privacy in control</strong>
-                    <p data-i18n="featureThreeBody">History is stored locally by default. You can set retention and excluded apps.</p>
-                </div>
-            </section>
         </main>
+
+        <section id="screenshots" class="screenshots" data-i18n-aria="screenshotsLabel" aria-label="XCopy screenshots">
+            <div class="screenshot-stack" data-lang-group="en">
+                <img src="assets/appstore-img/v3/app_store_1_en_v3.png" alt="XCopy English main window screenshot" loading="lazy">
+                <img src="assets/appstore-img/v3/app_store_2_en_v3.png" alt="XCopy English search and filter screenshot" loading="lazy">
+                <img src="assets/appstore-img/v3/app_store_3_en_v3.png" alt="XCopy English settings screenshot" loading="lazy">
+            </div>
+
+            <div class="screenshot-stack" data-lang-group="zh" hidden>
+                <img src="assets/appstore-img/v3/app_store_1_zh_v3.png" alt="XCopy 中文主界面截图" loading="lazy">
+                <img src="assets/appstore-img/v3/app_store_2_zh_v3.png" alt="XCopy 中文搜索筛选截图" loading="lazy">
+                <img src="assets/appstore-img/v3/app_store_3_zh_v3.png" alt="XCopy 中文设置界面截图" loading="lazy">
+            </div>
+        </section>
 
         <footer>
             <nav class="footer-links" data-i18n-aria="footerLabel" aria-label="Footer navigation">
-                <a href="#features" data-i18n="navFeatures">Features</a>
+                <a href="#screenshots" data-i18n="navScreenshots">Screenshots</a>
                 <a href="privacy-policy.html" data-i18n="navPrivacy">Privacy</a>
                 <a href="https://github.com/Kelvenbit/XCopy/releases" data-i18n="navReleases">Releases</a>
                 <a href="https://github.com/Kelvenbit/XCopy/issues" data-i18n="navIssues">Issues</a>
@@ -361,14 +366,9 @@
                 tagAccount: 'No account',
                 tagSubscription: 'No subscription',
                 tagSystem: 'macOS 14.0+',
-                featureOneTitle: 'Remember everything',
-                featureOneBody: 'Text, images, links, and files are saved in common formats.',
-                featureTwoTitle: 'Find it fast',
-                featureTwoBody: 'Press Command-Shift-V, search by keyword, filter by type, and press Return to reuse.',
-                featureThreeTitle: 'Privacy in control',
-                featureThreeBody: 'History is stored locally by default. You can set retention and excluded apps.',
+                screenshotsLabel: 'XCopy screenshots',
                 footerLabel: 'Footer navigation',
-                navFeatures: 'Features',
+                navScreenshots: 'Screenshots',
                 navPrivacy: 'Privacy',
                 navReleases: 'Releases',
                 navIssues: 'Issues'
@@ -384,14 +384,9 @@
                 tagAccount: '无账号',
                 tagSubscription: '无订阅',
                 tagSystem: 'macOS 14.0+',
-                featureOneTitle: '记住一切',
-                featureOneBody: '文字、图片、链接、文件，常见格式都能保存。',
-                featureTwoTitle: '快速找回',
-                featureTwoBody: '按 ⌘⇧V 打开，搜索关键词，筛选类型，回车复用。',
-                featureThreeTitle: '隐私可控',
-                featureThreeBody: '默认本地保存，可设置保留时间和排除应用。',
+                screenshotsLabel: 'XCopy 截图',
                 footerLabel: '底部导航',
-                navFeatures: '功能',
+                navScreenshots: '截图',
                 navPrivacy: '隐私',
                 navReleases: '版本',
                 navIssues: '问题反馈'
@@ -434,6 +429,10 @@
 
             document.querySelectorAll('[data-lang-option]').forEach(function(btn) {
                 btn.classList.toggle('active', btn.getAttribute('data-lang-option') === lang);
+            });
+
+            document.querySelectorAll('[data-lang-group]').forEach(function(group) {
+                group.hidden = group.getAttribute('data-lang-group') !== lang;
             });
 
             localStorage.setItem(LANG_STORAGE_KEY, lang);
